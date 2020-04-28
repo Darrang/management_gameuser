@@ -3,7 +3,7 @@
 
 // type defition
 typedef struct{
-	char age[50];
+	int age;
 	char id[50];
 	char name[50];
 	char email[50];

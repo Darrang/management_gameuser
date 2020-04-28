@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "extras.h"
 
 // Function: defragment()
@@ -23,3 +25,50 @@ void display_stats(Record records[]){
 
 
 // TODO: Add more functions to fulfill the optional requirements
+
+//typedef int (*compare)(const void*,const void*);
+
+int CompareByID(const void *v1, const void *v2){
+	const Record *records1 = (Record *)v1;
+	const Record *records2 = (Record *)v2;
+	return strcmp(records1->id, records2->id);
+}
+
+int CompareByage(const void *v1, const void *v2){
+   int a = ((Record *)v1)->age;
+   int b = ((Record *)v2)->age;
+   return a-b;
+}
+ 
+//sort  current User list(gender, age, name, id)
+//현재 유저리스트 정렬하기
+void sort_userlist(Record records[], int *pcount){
+	int select=0;
+	char choose;
+	char dummy;
+	printf("Enter sorting criteria.(1:ID 2:Age)"); //sort
+	scanf("%d",&select);
+ //	scanf("%c",&dummy);
+	if(select==1){
+		qsort(records,*pcount,sizeof(Record),CompareByID);
+	printf("==================================================================\n");
+		printf("  NO. ||  Name  ||  Age  ||  Gender  ||   Id   ||  Email address\n");
+		printf("==================================================================\n");
+		for(int i=0; i<*pcount; i++){
+			printf("%2d. %5s  %5d  %10s %15s %15s\n",i+1,records[i].name,records[i].age,records[i].gender,records[i].id,records[i].email);
+		}
+		printf("====================================================================\n");
+
+	}
+	else if(select==2){
+		qsort(records,*pcount,sizeof(Record),CompareByage);
+		printf("==================================================================\n");
+		printf("  NO. ||  Name  ||  Age  ||  Gender  ||   Id   ||  Email address\n");
+		printf("==================================================================\n");
+		for(int i=0; i<*pcount; i++){
+			printf("%2d. %5s  %5d  %10s %15s %15s\n",i+1,records[i].name,records[i].age,records[i].gender,records[i].id,records[i].email);
+		}
+		printf("====================================================================\n");
+	}
+	else return;
+}
