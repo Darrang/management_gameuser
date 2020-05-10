@@ -29,26 +29,27 @@ void print_all_users(Record *records[],int *pcount){
 	}
 	else if(choose==2){
 		char dummy;
-		int i;
+		int i = 0;
 		int count=0;
 		FILE *fp;
-	fp=fopen("Userdata.txt","rt");
-	if(fp==NULL){
-		printf("The file does not exist.");
-		return;
-	} 
-	while(!feof(fp))
-	{
-		records[i]=(Record*)malloc(sizeof(Record));
-		fgets(records[i]->name,sizeof(records[i]->name),fp);
-		fscanf(fp,"%d",&records[i]->age);
-		fscanf(fp,"%s",records[i]->gender);
-		fscanf(fp,"%s",records[i]->id);
-		fscanf(fp,"%s",records[i]->email);
-	  count++;
-	}
-	fclose(fp);
-	*pcount=count;
+		fp=fopen("Userdata.txt","rt");
+		if(fp==NULL){
+			printf("The file does not exist.");
+			return;
+		} 
+		while(!feof(fp))
+		{
+			records[i]=(Record*)malloc(sizeof(Record));
+			fscanf(fp,"%s",records[i]->name);
+			fscanf(fp,"%d",&records[i]->age);
+			fscanf(fp,"%s",records[i]->gender);
+			fscanf(fp,"%s",records[i]->id);
+			fscanf(fp,"%s",records[i]->email);
+		 	count++;
+			i += 1 ;
+		}
+		fclose(fp);
+		*pcount=count;
 
 		display_records(records,pcount);
 	}
