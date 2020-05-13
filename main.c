@@ -50,6 +50,8 @@ void input_handler(char input[], Record *records[], int *pcount){
 		search_user(records, pcount);
 	else if(!strcmp(input, "10"))
 		sort_userlist(*records, pcount);
+	else if(!strcmp(input, "11"))
+		advanced_search_user(records, pcount);
 	else if(!strcmp(input, "0"))
 			printf("Terminating... bye!\n");// Quit - no operation (an empty statement with a semi-colon)
 	else
@@ -72,6 +74,7 @@ void display_menu(){
 	printf(" 8. Delete User\n");
 	printf(" 9. Search(ID)\n"); 
 	printf(" 10. Sort(ID/Age)\n");
+	printf(" 11. Advanced Search\n"); 
 	printf(" 0. Quit\n");
 	
 }
