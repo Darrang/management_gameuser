@@ -5,17 +5,9 @@ I am making a program to manage the information of game users.
 
 management_gameuser
 ----------------------
-###Usage
+#Usage<br/>
 Load the information of the user stored in the file to add, delete, and update the user.
 Information from existing files can be replaced with new files.
-
-###Known Bugs
-There are some bugs.
-You can retrieve the file at the beginning of the program. 
-However, an error occurs when a file is called up when the user's information is in memory.
-When sorting information of users in memory or files, it is not sorted.
-After deleting the user's information, the information in the file disappears, but a bug occurs that remains in memory.
-
 
 **1.	void print_all_users(Record *records[],int *pcount);**<br/>
 If you want to print data currently stored in memory, enter 1. If you want to print data stored in Userdata.txt, enter 2. Then this function prints out the data when you decide how many users to print. if you want to print all the data, enter 0. This function is associated with the display function and the load function. 
@@ -49,3 +41,11 @@ Enter username as input. You can delete only the user's data by removing all use
 
 **11.	void sort_userlist(Record records[], int *pcount);**<br/>
 In this task, I want to sort user according to name and age from input. If user want to sort name, program will sort the name in order of dictionary. If user want to sort age, program will sort the age in order of the eldest user. But I don’t know algorithm and how I code the function yet. I need to think this algorithm.
+
+
+###Known Bugs
+There are some bugs.
+You can retrieve the file at the beginning of the program. 
+However, an error occurs when a file is called up when the user's information is in memory.
+When sorting information of users in memory or files, it is not sorted.
+After deleting the user's information, the information in the file disappears, but a bug occurs that remains in memory.
