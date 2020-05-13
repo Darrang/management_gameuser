@@ -47,7 +47,7 @@ Enter username as input. You can delete only the user's data by removing all use
 In this task, I want to sort user according to name and age from input. If user want to sort name, program will sort the name in order of dictionary. If user want to sort age, program will sort the age in order of the eldest user.
 
 
-###Known Bugs
+###Known Bugs<br/>
 There are some bugs.
 You can retrieve the file at the beginning of the program. 
 However, an error occurs when a file is called up when the user's information is in memory.
