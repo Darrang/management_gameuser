@@ -13,5 +13,6 @@ void export_user_file(Record *records[], int *pcount);
 void search_user(Record *records[], int *pcount);
 void update_user_data(Record *records[],int *pcount);
 int delete_user(Record *records[],int *pcount);
+void advanced_search_user(Record * records [], int *pcount);
 
 #endif
